@@ -1,29 +1,28 @@
 <template>
-  <div class="events">
-    <h1>Events For Good</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+  <div class="users">
+    <UserCard v-for="user in users" :key="user.id" :user="user" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import EventCard from "@/components/EventCard.vue";
+import UserCard from "@/components/UserCard.vue";
 import EventService from "@/services/EventService.js";
 
 export default {
-  name: "EventList",
+  name: "UserList",
   components: {
-    EventCard,
+    UserCard,
   },
   data() {
     return {
-      events: null,
+      users: null,
     };
   },
   created() {
-    EventService.getEvents()
+    EventService.getUsers()
       .then((response) => {
-        this.events = response.data;
+        this.users = response.data;
       })
       .catch((error) => {
         console.log(error);
@@ -33,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-.events {
+.users {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Events</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">用户列表</router-link> |
+    <router-link to="/about">关于</router-link>
   </nav>
   <router-view />
 </template>
